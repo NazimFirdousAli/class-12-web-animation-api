@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Animation API</title>
+    <style>
+        #box {
+            height: 100px;
+            width: 100px;
+            background-color: gold;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+
+    <script>
+        var element = document.getElementById("box");
+
+        //take input in timing and frame
+        //first take array then object
+        element.animate([
+            { transform: 'translate(0,0)', background:'red' },
+            { transform: 'translate(300px,0)',background:'blue' },
+            { transform: 'translate(300px,300px)',background:'orange' },
+            { transform: 'translate(0,300px)',background:'green' },
+            { transform: 'translate(0,0)',background:'purple' },
+
+        ], {
+            duration:3000,
+            iterations:Infinity
+        })
+
+    </script>
+
+</body>
+
+</html>
