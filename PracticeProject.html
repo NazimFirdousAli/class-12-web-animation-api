@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education</title>
+    <style>
+        body {
+            background-image: url('./images/Roadmap.jpg');
+            background-repeat: no-repeat;
+            background-size: 100%, 100%;
+
+        }
+    </style>
+</head>
+
+<body>
+        <button style="height: 110px; width: 210px; margin-left: 240px; " id="School">
+            hello
+        </button>
+        <button style="height: 110px; width: 210px;  margin-left: 230px;"id="Collage">
+            hello
+        </button>
+        <button style="height: 110px; width: 220px;  margin-left: 230px;"id="University">
+            hello
+        </button>
+
+        <img src="./images/StudentGif.gif" height="70px" width="70px" id="student">
+
+
+    <script>
+        var element = document.getElementById("student");
+
+        var first = element.animate([
+            { transform: 'translate(0,0)' },
+
+        ], {
+            duration: 2500,
+            iterations:Infinity
+        })
+        // var second = element.animate([
+        //     { transform: 'translate(480px,0)' },
+
+        // ], {
+        //     duration: 2500,
+        //     iterations:Infinity
+        // })
+
+        document.getElementById("School").addEventListener("click" ,()=> {
+            first.play();
+        })
+        // document.getElementById("Collage").addEventListener("click" ,()=> {
+        //     second.play();
+        // })
+        
+
+        // function sch(school) {
+        //     getElementById("school").addEventListener("click", () => {
+        //         school.play();
+        //     })
+        // }
+    </script>
+</body>
+
+</html>

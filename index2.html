@@ -4,8 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Animation API</title>
+    <style>
+        body{
+            background-image:url('./images/bg.jpg');
+            background-repeat: no-repeat;
+            background-size: 100% ;
+        }
+    </style>
 </head>
 <body>
+    <button id="Play" >Play</button>
+    <button id="Pause">Pause</button>
+    <button id="Reverse" >Reverse</button>
+    
+    <br /> <br /> <br />
+    <img src="./images/cloud.gif" id="cloud">
+
+    <script>
+        var element = document.getElementById('cloud');
+        
+
+        var ani = element.animate([
+            {transform: 'translate(0,0)'}
+            
+        ],{
+            duration:6000,
+            
+        })
+        
+        var ply = element.animate([
+            {transform: 'translate(1150px,0)'}
+            
+        ],{
+            duration:6000,
+            
+        })
+
+        // document.addEventListener("mousedown", ()=> {
+        //     ani.pause();
+        // })
+        
+        // document.addEventListener("mouseup", ()=> {
+        //     ani.play();
+        // })
+
+        document.getElementById('Play').addEventListener("click",()=>{
+            ply.play();
+        })
+        document.getElementById('Pause').addEventListener("click",()=>{
+            ply.pause();
+        })
+        document.getElementById('Reverse').addEventListener("click",()=>{
+            ply.reverse();
+        })
+        document.getElementById('Play').addEventListener("click",()=>{
+            ply.play();
+        })
+        
+    </script>
     
 </body>
 </html>
