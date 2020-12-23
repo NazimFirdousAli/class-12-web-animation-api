@@ -9,57 +9,107 @@
         body {
             background-image: url('./images/Roadmap.jpg');
             background-repeat: no-repeat;
-            background-size: 100%, 100%;
+            background-size: 100% 98%;
 
         }
     </style>
 </head>
 
 <body>
-        <button style="height: 110px; width: 210px; margin-left: 240px; " id="School">
-            hello
-        </button>
-        <button style="height: 110px; width: 210px;  margin-left: 230px;"id="Collage">
-            hello
-        </button>
-        <button style="height: 110px; width: 220px;  margin-left: 230px;"id="University">
-            hello
-        </button>
+    <button style="height: 110px; width: 223px; margin-left: 234px; background-color: transparent; background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none; " id="School" onclick="doSomething()" >
+        
+    </button>
+    <button style="height: 110px; width: 220px;  margin-left: 220px;  background-color: transparent; background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none; " id="Collage" onclick="doSomething1()">
+    </button>
+    <button style="height: 110px; width: 220px;  margin-left: 220px;  background-color: transparent; background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;  " id="University" onclick="doSomething2()">
+    </button>
 
-        <img src="./images/StudentGif.gif" height="70px" width="70px" id="student">
+    <img src="./images/StudentGif.gif" height="70px" width="70px" id="student">
 
 
     <script>
+
+        var clicked = false;
+        var clicked1 = false;
+        var clicked2 = false;
+
         var element = document.getElementById("student");
 
-        var first = element.animate([
-            { transform: 'translate(0,0)' },
 
-        ], {
-            duration: 2500,
-            iterations:Infinity
+        function second(a) {
+            element.animate([
+                { transform: 'translate(270px,0)' },
+
+            ], {
+                duration: a,
+                fill: 'forwards'
+
+            })
+        }
+
+        function third(a) {
+            element.animate([
+                { transform: 'translate(730px,0)' },
+
+            ], {
+                duration: a,
+                fill: 'forwards'
+
+            })
+        }
+
+        function forth(a) {
+            element.animate([
+                { transform: 'translate(1200px,0)' },
+
+            ], {
+                duration: a,
+                fill: 'forwards'
+
+            })
+        }
+
+        document.getElementById("School").addEventListener("click", () => {
+            second(2500).play()
         })
-        // var second = element.animate([
-        //     { transform: 'translate(480px,0)' },
 
-        // ], {
-        //     duration: 2500,
-        //     iterations:Infinity
-        // })
-
-        document.getElementById("School").addEventListener("click" ,()=> {
-            first.play();
+        document.getElementById("Collage").addEventListener("click", () => {
+            third(2500).play()
         })
-        // document.getElementById("Collage").addEventListener("click" ,()=> {
-        //     second.play();
-        // })
-        
 
-        // function sch(school) {
-        //     getElementById("school").addEventListener("click", () => {
-        //         school.play();
-        //     })
-        // }
+        document.getElementById("University").addEventListener("click", () => {
+            forth(2500).play()
+        })
+
+
+        function doSomething() {
+            if (!clicked) {
+                document.getElementById("School").disabled = true
+            }
+        }
+        function doSomething1() {
+            if (!clicked1) {
+                document.getElementById("Collage").disabled = true
+            }
+        }
+        function doSomething2() {
+            if (!clicked2) {
+                document.getElementById("University").disabled = true
+            }
+        }
+
     </script>
 </body>
 
